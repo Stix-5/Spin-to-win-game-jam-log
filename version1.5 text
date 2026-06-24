@@ -1,0 +1,25 @@
+init = function()
+    phase = "wheel"
+  spinner = function()
+    if mouse.release then
+      phase = "spin"
+      after 2 seconds do
+        phase = "wheel"
+        after 0 do
+        screen.drawText("You gota a 100% discount!", 0 ,0 ,50,"rgb(255,255,255)")
+         phase = "gone"
+        end
+      end
+     end
+    end
+  end
+
+update = function()
+  spinner()
+  end
+
+
+draw = function()
+  screen.drawSprite( phase, 0, 0, 100, 100 )
+end
+
