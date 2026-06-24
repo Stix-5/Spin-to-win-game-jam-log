@@ -1,0 +1,20 @@
+init = function()
+    phase = "wheel"
+  spinner = function()
+    if mouse.release then
+      phase = "spin"
+      after 2 seconds do
+        phase = "wheel"
+      end
+      end
+    end
+  end
+
+update = function()
+  spinner()
+  end
+
+
+draw = function()
+  screen.drawSprite( phase, 0, 0, 100, 100 )
+end
