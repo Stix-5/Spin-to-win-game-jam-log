@@ -1,0 +1,40 @@
+init = function()
+    phase = "wheel"
+  spinner = function()
+    selected = random.nextInt(4)
+    if mouse.press then
+      if selected == 0 then
+        discount = "Too bad. You got a 0% discount."
+      elsif selected == 1 then
+        discount == "You got a 50% discount"
+      elsif selected == 2 then
+        discount = "Nice. You got a 75% discount."
+      elsif selected == 3 then
+        discount = "WHOA! YOU GOT A 100% DISCOUNT! YOU WIN!"
+      end
+    end
+    if mouse.release then
+      phase = "spin"
+      after 2 seconds do
+        phase = "wheel"
+        phase = "gone"
+        screen.drawSprite("gone",0,0,0,0,)
+        after 0 do
+        screen.drawText(discount, 0 ,0 ,20,"rgb(255,0,255)")
+        after 2 seconds do
+          screen.clear()
+        end
+      end
+     end
+    end
+  end
+end
+
+update = function()
+  spinner()
+  end
+
+
+draw = function()
+ screen.drawSprite( phase, 0, 0, 100, 100 )
+end
